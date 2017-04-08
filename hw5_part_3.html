@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>CNIT 133 Homework Assignments #5</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Fifth homework in CNIT-133 ">
+      <link rel="stylesheet" href="hw4.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+
+     <script> 
+$(document).ready(function(){
+$("#myform").validate({
+
+   rules: {
+
+          income: { required: true, number: true},
+
+ },
+    messages: { 
+
+ income:  "Please enter an income"
+
+         }
+   
+});
+});
+         var total = [{}, {}, {}, {}, {}, {}, {}, {}, {}];
+   
+         function start() {
+            for ( var i = 0; i < total.length; ++i ) 
+               total[ i ] = 0;     
+         }
+      
+         function part_3() {
+         if ($("#myform").valid()) {
+             var income = (200 + parseInt(document.getElementById("income").value) * 0.09).toFixed(0)
+             if (income >=1000){
+                      total[8]++
+                  }
+             else if (income >=200){
+                 ++total[ parseInt((income/100-2)) ]
+                      
+                  }
+             outputArray();
+         }
+
+       function outputArray() {      
+            document.getElementById("name").innerHTML =
+               "<th colspan='2'>Number of people who paid dues " +
+               "in the following ranges:</th>" +
+               "<tr><td>$200.00 - 299.99 </td><td> " + total[ 0 ] + "</td></tr>"  +
+               "<tr><td>$300.00 - 399.99 </td><td> " + total[ 1 ] + "</td></tr>" +     
+               "<tr><td>$400.00 - 499.99</td><td> " + total[ 2 ] + "</td></tr>" +
+                "<tr><td>$500.00 - 599.99 </td><td> " + total[ 3 ] + "</td></tr>" +
+                "<tr><td>$600.00 - 699.99 </td><td> " + total[ 4 ] + "</td></tr>" +
+                "<tr><td>$700.00 - 799.99 </td><td> " + total[ 5 ] + "</td></tr>" +
+                "<tr><td>800.00 - 899.99 </td><td> " + total[ 6] + "</td></tr>" +
+                "<tr><td>$900.00 - 999.99 </td><td> " + total[ 7 ] + "</td></tr>" +
+               "<tr><td>$1000 and over </td><td> " + total[ 8 ];
+
+             document.getElementById("tot").value = income;
+         }
+         
+         
+         }
+         
+
+
+         
+</script>
+<style>
+    #name{
+            color: #999093;
+            font-size: 24px;
+            font-style: italic;
+            margin-left: 400px;
+        }
+    .error { font: normal 14px arial; padding: 3px; margin: 3px; color: blue; background-color: #ffc; }
+   
+    </style>
+ </head>
+
+<body onload = "start()">
+    <nav>
+    <div class="navigation">
+        <a class="navigation" href="hw1.html">HW1</a>
+        <a class="navigation" href="hw2.html">HW2</a>
+         <a class="navigation" href="hw3.html">HW3</a>
+        <a class="navigation" href="hw4.html">HW4</a>
+        <a class="navigation" href="hw5.html">HW5</a>
+        <a class="navigation" href="hw6.html">HW6</a>
+        <a class="navigation" href="hw7.html">HW7</a>
+        <a class="navigation" href="hw8.html">HW8</a>
+        </div>
+    </nav>
+    <h1> Homework 5 - Array </h1>
+  <div id="menu">
+  <div id="first">
+        <a href="hw5_part_1.html">
+        <h3>Part 1 - Input</h3></a>
+    </div>
+    <div id="second">
+        <a href="hw5_part_1b.html">
+            <h3>Part 1b - Pulldown menu</h3></a>
+    </div>
+    <div id="third">
+        <a href="hw5_part_2.html">
+        <h3>Part 2 - States</h3></a>
+    </div>
+    <div id="fourth">
+        <a href="hw5_part_3.html">
+        <h3>Part 3 - Salaries</h3></a>
+    </div>
+   <div id="fifth">
+        <a href="hw5_part_4.html">
+        <h3>Part 4 - Numbers</h3></a>
+    </div>
+      <div id="extra">
+        <a href="hw5_extra.html">
+        <h3>Extra - Airlines Reservation System</h3></a>
+    </div>
+    </div>
+  <div id="main">  
+
+      <form name="myform" id="myform">
+          <table>
+
+         <td>Enter gross income: 
+
+             <input type="text" id="income" name="income"> 
+              </td>
+          <td>
+              Salesperson salary: <input type="text" id="tot">
+              </td>
+
+         </table>
+         <p><input type="button" value = "Submit" onclick="part_3()">
+
+             <input type="reset" value="Reset" onclick="window.location.reload();"></p>
+              
+          <table id="name" ></table>
+          <table id="name2" ></table>
+
+      </form>
+
+      
+              
+       
+    </div>
+  
+    <div class="footer">
+        <a href="https://validator.w3.org/check?uri=referer">
+    <img src="icon-validator-v4.jpg"
+     alt="html5"></a>
+
+     <a href="https://jigsaw.w3.org/css-validator/check/referer">
+     <img src="css.png" alt="css">
+    </a>
+<p class="footer">
+  Copyright &copy;  Olga Fedorenko 2017
+</p>
+
+</div>
+    </body>
+</html>

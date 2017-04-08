@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>CNIT 133 Homework Assignments #5</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Fifth homework in CNIT-133 ">
+      <link rel="stylesheet" href="hw4.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script src="hw4_js.js"></script>
+    
+   
+     <script> 
+$(function() {
+
+$( "#dialog" ).dialog({
+    
+autoOpen: false,
+show: {
+effect: "blind",
+duration: 1000
+   
+},
+
+hide: {
+effect: "explode",
+duration: 1000
+}
+});
+
+$( "#opener" ).click(function() {
+$( "#dialog" ).dialog( "open" );
+});
+});
+  
+var states = [ ["AL", "Alabama", "Montgomery", "4,779,736"],                                  ["AK",	"Alaska",	"Juneau",	"710,231"],
+                 ["AZ",	"Arizona",	"Phoenix",	"6,392,017"],
+                 ["AR",	"Arkansas",	"Little Rock",	"2,915,918"],
+                 ["CA",	"California",	"Sacramento",	"37,253,956"],
+                 ["CO",	"Colorado",	"Denver",	"5,029,196"] ];    
+
+
+function part_2()
+   
+{   
+
+    var searchKey = document.forms["myform"].elements["inputState"].value;  
+    searchKey = searchKey.toUpperCase();     
+    
+    var found = false;
+    for (var row = 0; row < states.length; row++)
+     {
+	
+     if ((states[row][0] == searchKey) || (states[row][1].toUpperCase() == searchKey)){
+         document.getElementById("name").innerHTML = "<td>State Abbr:<br> State Name:<br> Capital:<br> Population:</td><td>" + states[row][0]  + "<br>" + states[row][1]  + "<br>" + states[row][2]  + "<br>" + states[row][3]  + "</td>";
+          row = states.length;   //ends loop if match found
+         found = true;
+     }
+ 
+  }
+
+  if ( found == false ) {
+   document.getElementById("name").innerHTML= "State not found. Check your input."; 
+       }
+}
+
+
+
+         
+</script>
+<style>
+    #name{
+            color: #999093;
+            font-size: 24px;
+            font-style: italic;
+            margin-left: 400px;
+        }
+    .error { font: normal 14px arial; padding: 3px; margin: 3px; color: blue; background-color: #ffc; }
+   
+    </style>
+ </head>
+
+<body>
+    <nav>
+    <div class="navigation">
+        <a class="navigation" href="hw1.html">HW1</a>
+        <a class="navigation" href="hw2.html">HW2</a>
+         <a class="navigation" href="hw3.html">HW3</a>
+        <a class="navigation" href="hw4.html">HW4</a>
+        <a class="navigation" href="hw5.html">HW5</a>
+        <a class="navigation" href="hw6.html">HW6</a>
+        <a class="navigation" href="hw7.html">HW7</a>
+        <a class="navigation" href="hw8.html">HW8</a>
+        </div>
+    </nav>
+    <h1> Homework 5 - Array </h1>
+  <div id="menu">
+<div id="first">
+        <a href="hw5_part_1.html">
+        <h3>Part 1 - Input</h3></a>
+    </div>
+    <div id="second">
+        <a href="hw5_part_1b.html">
+            <h3>Part 1b - Pulldown menu</h3></a>
+    </div>
+    <div id="third">
+        <a href="hw5_part_2.html">
+        <h3>Part 2 - States</h3></a>
+    </div>
+    <div id="fourth">
+        <a href="hw5_part_3.html">
+        <h3>Part 3 - Salaries</h3></a>
+    </div>
+   <div id="fifth">
+        <a href="hw5_part_4.html">
+        <h3>Part 4 - Numbers</h3></a>
+    </div>
+      <div id="extra">
+        <a href="hw5_extra.html">
+        <h3>Extra - Airlines Reservation System</h3></a>
+    </div>
+    </div>
+  <div id="main">  
+<button id="opener">Click for information</button>
+
+<div id="dialog" title="What it is">
+Enter a state name (full or abbreviated)  (lower or upper case is ok)  
+</div>
+    
+
+    
+       <table>
+                    <tr><th>Abbr</th><th>State Name</th><th>State Capital</th><th>Population</th></tr>
+                    <tr><td>AL</td><td>Alabama      </td><td>Montgomery </td><td class="right">4,369,862</td></tr>
+                    <tr><td>AK</td><td>Alaska       </td><td>Juneau     </td><td class="right">619,500  </td></tr>
+                    <tr><td>AZ</td><td>Arizona      </td><td>Phoenix    </td><td class="right">4,778,332</td></tr>
+                    <tr><td>AR</td><td>Arkansas     </td><td>Little Rock</td><td class="right">2,551,373</td></tr>
+                    <tr><td>CA</td><td>California   </td><td>Sacramento </td><td class="right">3,145,121</td></tr>
+                    <tr><td>CO</td><td>Colorado     </td><td>Denver     </td><td class="right">4,056,133</td></tr>
+                </table>
+      <form id="myform" name='myform'>
+                  <p>
+                      <input type="text" size="15" name="inputState" autofocus> 
+
+                      <input type="button" onclick="part_2()" value="SUBMIT">
+                      <input type="reset" value="RESET" onclick="window.location.reload();"></p>
+       
+        
+       
+              </form>
+      
+              
+       <table id="name" ></table>
+    </div>
+  
+    <div class="footer">
+        <a href="https://validator.w3.org/check?uri=referer">
+    <img src="icon-validator-v4.jpg"
+     alt="html5"></a>
+
+     <a href="https://jigsaw.w3.org/css-validator/check/referer">
+     <img src="css.png" alt="css">
+    </a>
+<p class="footer">
+  Copyright &copy;  Olga Fedorenko 2017
+</p>
+
+</div>
+    </body>
+</html>

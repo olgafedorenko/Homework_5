@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>CNIT 133 Homework Assignments #5</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Fifth homework in CNIT-133 ">
+    <link rel="stylesheet" href="hw4.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="hw3_js.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    
+<script>
+$(document).ready(function(){
+$("#myform").validate({
+    rules:{
+        first_name: { required: true},
+            last_name: { required: true},
+            myemail: { required: true},
+            
+            type_class: { required: true},
+            people: { required: true},
+            add: { required: true},
+    },
+    
+
+		messages: {
+			first_name: "Please enter your first name",
+            last_name: "Please enter your last name",
+            myemail: "Please enter your email",
+            
+            type_class: "Please choose a class",
+            people: "Please choose a number of people",
+            add: "Please choose an exta services"
+	    },
+
+errorPlacement: function(error, element) {
+if ( element.is(":radio") || element.is(":checkbox")) {
+error.appendTo( element.parent());
+} else {
+error.insertAfter(element);
+}
+}
+
+
+});
+    });
+
+</script>
+    <style>
+      
+        .error { font: normal 14px arial; padding: 3px; margin: 3px; color: blue; background-color: #ffc; }
+    </style>
+    </head>
+
+<body>
+    <nav>
+    <div class="navigation">
+        <a class="navigation" href="hw1.html">HW1</a>
+        <a class="navigation" href="hw2.html">HW2</a>
+        <a class="navigation" href="hw3.html">HW3</a> 
+        <a class="navigation" href="hw4.html">HW4</a>
+        <a class="navigation" href="hw5.html">HW5</a>
+        <a class="navigation" href="hw6.html">HW6</a>
+        <a class="navigation" href="hw7.html">HW7</a>
+        <a class="navigation" href="hw8.html">HW8</a>
+        </div>
+    </nav>
+ <h1> Homework 5 - Array </h1>
+  <div id="menu">
+   <div id="first">
+        <a href="hw5_part_1.html">
+        <h3>Part 1 - Input</h3></a>
+    </div>
+    <div id="second">
+        <a href="hw5_part_1b.html">
+            <h3>Part 1b - Pulldown menu</h3></a>
+    </div>
+    <div id="third">
+        <a href="hw5_part_2.html">
+        <h3>Part 2 - States</h3></a>
+    </div>
+    <div id="fourth">
+        <a href="hw5_part_3.html">
+        <h3>Part 3 - Salaries</h3></a>
+    </div>
+   <div id="fifth">
+        <a href="hw5_part_4.html">
+        <h3>Part 4 - Numbers</h3></a>
+    </div>
+      <div id="extra">
+        <a href="hw5_extra.html">
+        <h3>Extra - Airlines Reservation System</h3></a>
+    </div>
+    </div>
+    <div id="main">
+        <form method="post" id="myform" name="myform" action="contact.html">
+        <table>
+<p>Book your dream vacation easy</p>
+    
+    <tr>
+        <td>
+            <label for="first_name">First name:</label>
+            <input type="text" name="first_name" id="first_name" size="35" maxlength="50" placeholder="Type first name" class="required" >
+        </td></tr>
+        <tr><td>
+            <label for="last_name">Last name:</label>
+            <input type="text" name="last_name" id="last_name" size="35" maxlength="50" placeholder="Type last name" class="required">
+            </td></tr>
+        <tr><td>
+            <label for="myemail">Your email: </label>
+            <input type="email" name="myemail" id="myemail" class="required" />
+        </td>
+        </tr>
+     <tr>
+         <td>
+             <label for="type_class">Select a class: </label>
+             First<input type="radio" id="f" value="f" name="type_class" class="required">
+             Economy<input type="radio" id="econ" value="econ" name="type_class" >
+             Business<input type="radio" id="bus" value="bus" name="type_class">
+         </td></tr>
+         <tr><td>
+             <label for="people" class="people">How many people travelling with you: </label>
+                <select name="people" id="people" class="required">
+                <option value="">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                </select>
+         </td></tr>
+         <tr><td>
+             Add a hotel<input type="checkbox" id="hotel" name="add" value="hotel" class="required">
+             Add a car<input type="checkbox" id="car" value="car" name="add">
+
+</td>
+
+        </tr>
+
+<tr><td colspan="3">
+    <input type="submit" name="submit" id="submit" value="Submit">&nbsp;&nbsp;&nbsp;
+    <input type="reset" value="Reset" onclick="window.location.reload();">
+    </td></tr>
+        </table>
+</form>
+            
+<p class="footer">
+  Copyright &copy;  Olga Fedorenko 2017
+</p>
+
+</div>
+    </body>
+</html>

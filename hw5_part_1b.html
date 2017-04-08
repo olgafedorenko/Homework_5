@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>CNIT 133 Homework Assignments #5</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Fifth homework in CNIT-133 ">
+    <link rel="stylesheet" href="hw4.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="hw3_js.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    
+<script>
+function Navigation(myform)
+		{
+			var dn = myform.animals.options[myform.animals.selectedIndex].value;
+			window.location = dn;
+		}
+
+</script>
+    <style>
+      
+        
+    </style>
+    </head>
+
+<body>
+    <nav>
+    <div class="navigation">
+        <a class="navigation" href="hw1.html">HW1</a>
+        <a class="navigation" href="hw2.html">HW2</a>
+        <a class="navigation" href="hw3.html">HW3</a> 
+        <a class="navigation" href="hw4.html">HW4</a>
+        <a class="navigation" href="hw5.html">HW5</a>
+        <a class="navigation" href="hw6.html">HW6</a>
+        <a class="navigation" href="hw7.html">HW7</a>
+        <a class="navigation" href="hw8.html">HW8</a>
+        </div>
+    </nav>
+ <h1> Homework 5 - Array </h1>
+  <div id="menu">
+     <div id="first">
+        <a href="hw5_part_1.html">
+        <h3>Part 1 - Input</h3></a>
+    </div>
+    <div id="second">
+        <a href="hw5_part_1b.html">
+            <h3>Part 1b - Pulldown menu</h3></a>
+    </div>
+    <div id="third">
+        <a href="hw5_part_2.html">
+        <h3>Part 2 - States</h3></a>
+    </div>
+    <div id="fourth">
+        <a href="hw5_part_3.html">
+        <h3>Part 3 - Salaries</h3></a>
+    </div>
+   <div id="fifth">
+        <a href="hw5_part_4.html">
+        <h3>Part 4 - Numbers</h3></a>
+    </div>
+      <div id="extra">
+        <a href="hw5_extra.html">
+        <h3>Extra - Airlines Reservation System</h3></a>
+    </div>
+    </div>
+    <div id="main">
+        <p>We can make you smile in one click:</p>
+       <form id="myform1" name="myform1">
+            <p>
+                <select name="animals" id="animals" onchange="Navigation(this.form);">
+                    <option>Choose a number</option>
+                <option value="https://i.ytimg.com/vi/cNycdfFEgBc/maxresdefault.jpg">1</option>
+                <option value="http://dooced.ru/wp-content/uploads/2015/05/koty_prikolnye_s_kotami_1600x1200.jpg">2</option>
+                <option value="https://ianimal.ru/wp-content/uploads/2011/12/cats_02.jpg">3</option>
+                <option value="http://www.bugaga.ru/uploads/posts/2010-08/1283107599_01.jpg">4</option>
+                </select>
+         </p> 
+       </form> 
+        <form id="myform222" name="myform222">
+            <p>
+                <select name="animals" id="animals">
+                    <option>Choose a number</option>
+                <option value="http://rga4.ru/fp-content/images/201201/rga4.ru_smeshnye_sobaki_01.jpg">1</option>
+                <option value="https://i.ytimg.com/vi/7S_t1cGM1P8/hqdefault.jpg">2</option>
+                <option value="http://www.gogetnews.info/uploads/posts/2016-08/1470681223_1-foto-1.jpg">3</option>
+                <option value="https://ae01.alicdn.com/kf/HTB1uT0YOVXXXXaKaFXXq6xXFXXXM/2016-Novelty-font-b-Funny-b-font-font-b-Dog-b-font-font-b-Costume-b.jpg">4</option>
+                
+                </select>
+                <br>
+                <input type="button" value="Click" onclick="Navigation(this.form);">&nbsp;&nbsp;&nbsp;
+                <input type="reset" value="Reset" onclick="window.location.reload();">
+            </p>
+       </form>
+        
+
+        
+
+            
+<p class="footer">
+  Copyright &copy;  Olga Fedorenko 2017
+</p>
+
+</div>
+    </body>
+</html>
